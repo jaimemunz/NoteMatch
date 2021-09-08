@@ -9,25 +9,29 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var noteThemes = [["F", "Dm", "C", "Fm", "G", "Em"], ["C", "Am", "G", "Em", "D", "Bm"], ["F♯m", "C♯m", "G♯m", "A", "E", "B"]]
+    private var noteThemes = [["F", "Dm", "C", "Fm", "G", "Em"], ["C", "Am", "G", "Em", "D", "Bm"], ["F♯m", "C♯m", "G♯m", "A", "E", "B"]]
     
-    lazy var noteChoices = noteThemes[Int(arc4random_uniform(UInt32(noteThemes.count)))]
+    private lazy var noteChoices = noteThemes[Int(arc4random_uniform(UInt32(noteThemes.count)))]
     
-    @IBAction func newGame(_ sender: UIButton) {
+    @IBAction private func newGame(_ sender: UIButton) {
         noteChoices = noteThemes[Int(arc4random_uniform(UInt32(noteThemes.count)))]
         game = NoteMatch(numberOfMatchingPairs: (cardGroup.count + 1 ) / 2)
         updateViewAfterPress()
     }
     
-    @IBOutlet weak var scoreLabel: UILabel!
+    var numberOfMatchingPairs: Int {
+        return (cardGroup.count + 1 ) / 2
+    }
     
-    lazy var game = NoteMatch(numberOfMatchingPairs: (cardGroup.count + 1 ) / 2)
+    @IBOutlet private weak var scoreLabel: UILabel!
     
-    @IBOutlet weak var flipCountLabel: UILabel!
+    private lazy var game = NoteMatch(numberOfMatchingPairs: numberOfMatchingPairs)
     
-    @IBOutlet var cardGroup: [UIButton]!
+    @IBOutlet private weak var flipCountLabel: UILabel!
     
-    @IBAction func pressButton(_ sender: UIButton) {
+    @IBOutlet private var cardGroup: [UIButton]!
+    
+    @IBAction private func pressButton(_ sender: UIButton) {
         if let cardNumber = cardGroup.firstIndex(of: sender) {
             print("Card number is: \(cardNumber)")
             game.chooseCard(at: cardNumber)
@@ -36,7 +40,7 @@ class ViewController: UIViewController {
     }
     
     
-    func updateViewAfterPress() {
+    private func updateViewAfterPress() {
         for index in cardGroup.indices {
             let button = cardGroup[index]
             let card = game.cards[index]
@@ -52,13 +56,12 @@ class ViewController: UIViewController {
         scoreLabel.text = "Score: \(game.gameScore)"
     }
     
-    var note = [Int:String]()
+    private var note = [Int:String]()
     
     
-    func note(for card: Card) -> String {
+    private func note(for card: Card) -> String {
         if note[card.identifier] == nil, noteChoices.count > 0 {
-            let chosenNote = Int(arc4random_uniform(UInt32(noteChoices.count)))
-            note[card.identifier] = noteChoices.remove(at: chosenNote)
+            note[card.identifier] = noteChoices.remove(at: noteChoices.count.arc4random)
         }
         return note[card.identifier] ?? "?"
     }
@@ -66,3 +69,15 @@ class ViewController: UIViewController {
 
 }
 
+
+extension Int {
+    var arc4random : Int {
+        if self > 0 {
+            return Int(arc4random_uniform(UInt32(self)))
+        } else if self < 0 {
+            return -Int(arc4random_uniform(UInt32(abs(self))))
+        } else {
+            return 0
+        }
+    }
+}

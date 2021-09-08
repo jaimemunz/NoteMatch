@@ -9,15 +9,35 @@ import Foundation
 
 class NoteMatch {
     
-    var cards = [Card]()
+    private(set) var cards = [Card]()
     
-    var indexOfOneAndOnlyOneFaceUpCard : Int?
+    private var indexOfOneAndOnlyOneFaceUpCard : Int? {
+        get {
+            var foundIndex: Int?
+            for index in cards.indices {
+                if cards[index].isFaceUp {
+                    if foundIndex == nil {
+                        foundIndex = index
+                    } else {
+                        foundIndex = nil
+                    }
+                }
+            }
+            return foundIndex
+        }
+        set {
+            for index in cards.indices {
+                cards[index].isFaceUp = (index == newValue)
+            }
+        }
+    }
     
-    var flipCount = 0
+    private(set) var flipCount = 0
     
-    var gameScore = 0
+    private(set) var gameScore = 0
     
     func chooseCard(at index: Int) {
+        assert(cards.indices.contains(index), "NoteMatch.chooseCard(\(index)): Chosen index not found in cards")
         if !cards[index].isMatched {
             flipCount += 1
             if let matchIndex = indexOfOneAndOnlyOneFaceUpCard, !(matchIndex == index) {
@@ -34,20 +54,17 @@ class NoteMatch {
                         gameScore -= 1
                     }
                 }
-                indexOfOneAndOnlyOneFaceUpCard = nil
                 cards[index].isFaceUp = true
             } else {
-                for indexOfFaceDownCards in cards.indices {
-                    cards[indexOfFaceDownCards].isFaceUp = false
-                }
                 indexOfOneAndOnlyOneFaceUpCard = index
-                cards[index].isFaceUp = true
             }
             cards[index].isPreviouslySeen = true
         }
     }
     
     init(numberOfMatchingPairs: Int) {
+        assert(numberOfMatchingPairs > 0, "NoteMatch.init(\(numberOfMatchingPairs)): number of matching pairs must be at least 1")
+
         for _ in 1...numberOfMatchingPairs {
             let card = Card()
             cards += [card, card]
