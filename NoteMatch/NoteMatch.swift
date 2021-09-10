@@ -13,17 +13,21 @@ class NoteMatch {
     
     private var indexOfOneAndOnlyOneFaceUpCard : Int? {
         get {
-            var foundIndex: Int?
-            for index in cards.indices {
-                if cards[index].isFaceUp {
-                    if foundIndex == nil {
-                        foundIndex = index
-                    } else {
-                        foundIndex = nil
-                    }
-                }
+            let arrayOfFaceUpCardsIndices = cards.indices.filter {
+                return cards[$0].isFaceUp
             }
-            return foundIndex
+            return arrayOfFaceUpCardsIndices.oneAndOnly
+//            var foundIndex: Int?
+//            for index in cards.indices {
+//                if cards[index].isFaceUp {
+//                    if foundIndex == nil {
+//                        foundIndex = index
+//                    } else {
+//                        foundIndex = nil
+//                    }
+//                }
+//            }
+//            return foundIndex
         }
         set {
             for index in cards.indices {
@@ -41,7 +45,7 @@ class NoteMatch {
         if !cards[index].isMatched {
             flipCount += 1
             if let matchIndex = indexOfOneAndOnlyOneFaceUpCard, !(matchIndex == index) {
-                if cards[matchIndex].identifier == cards[index].identifier {
+                if cards[matchIndex] == cards[index] {
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
                     gameScore += 2
@@ -73,4 +77,11 @@ class NoteMatch {
         cards.shuffle()
     }
     
+}
+
+
+extension Collection {
+    var oneAndOnly : Element? {
+        return count == 1 ? first : nil
+    }
 }

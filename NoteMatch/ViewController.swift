@@ -25,10 +25,23 @@ class ViewController: UIViewController {
     
     @IBOutlet private weak var scoreLabel: UILabel!
     
+    private func updateFlipCountLabel() {
+        let attributes : [NSAttributedString.Key: Any] = [
+            .strokeWidth : 5.0,
+            .strokeColor : #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+        ]
+        let attributedString = NSAttributedString(string: "Flips: \(game.flipCount)", attributes: attributes)
+        flipCountLabel.attributedText = attributedString
+    }
+    
     private lazy var game = NoteMatch(numberOfMatchingPairs: numberOfMatchingPairs)
     
-    @IBOutlet private weak var flipCountLabel: UILabel!
-    
+    @IBOutlet private weak var flipCountLabel: UILabel! {
+        didSet {
+            updateFlipCountLabel()
+        }
+    }
+
     @IBOutlet private var cardGroup: [UIButton]!
     
     @IBAction private func pressButton(_ sender: UIButton) {
@@ -56,14 +69,14 @@ class ViewController: UIViewController {
         scoreLabel.text = "Score: \(game.gameScore)"
     }
     
-    private var note = [Int:String]()
+    private var note = [Card:String]()
     
     
     private func note(for card: Card) -> String {
-        if note[card.identifier] == nil, noteChoices.count > 0 {
-            note[card.identifier] = noteChoices.remove(at: noteChoices.count.arc4random)
+        if note[card] == nil, noteChoices.count > 0 {
+            note[card] = noteChoices.remove(at: noteChoices.count.arc4random)
         }
-        return note[card.identifier] ?? "?"
+        return note[card] ?? "?"
     }
     
 
