@@ -15,12 +15,27 @@ class ViewController: UIViewController {
     
     @IBAction private func newGame(_ sender: UIButton) {
         noteChoices = noteThemes[Int(arc4random_uniform(UInt32(noteThemes.count)))]
-        game = NoteMatch(numberOfMatchingPairs: (cardGroup.count + 1 ) / 2)
-        updateViewAfterPress()
+        game = NoteMatch(numberOfMatchingPairs: (noteCardGroup.count + 1 ) / 2)
+        var cards = [Card]()
+        for index in 0..<noteCardGroup.count {
+            let card = game.cards[index]
+            if note[card] == nil, noteChoices.count > 0 {
+                note[card] = noteChoices.remove(at: noteChoices.count.arc4random)
+            }
+            cards += [card]
+        }
+        for cardView in noteCardGroup {
+            cardView.isFaceUp = false
+            let card = cards.removeFirst()
+            if let note = note[card] {
+                cardView.note = note
+            }
+        }
+        updateCardViewsAfterTap()
     }
     
     var numberOfMatchingPairs: Int {
-        return (cardGroup.count + 1 ) / 2
+        return (noteCardGroup.count + 1 ) / 2
     }
     
     @IBOutlet private weak var scoreLabel: UILabel!
@@ -42,28 +57,18 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBOutlet private var cardGroup: [UIButton]!
-    
-    @IBAction private func pressButton(_ sender: UIButton) {
-        if let cardNumber = cardGroup.firstIndex(of: sender) {
-            print("Card number is: \(cardNumber)")
-            game.chooseCard(at: cardNumber)
-            updateViewAfterPress()
-        }
-    }
+    @IBOutlet var noteCardGroup: [NoteCardView]!
     
     
-    private func updateViewAfterPress() {
-        for index in cardGroup.indices {
-            let button = cardGroup[index]
+    
+    private func updateCardViewsAfterTap() {
+        print(game.cards)
+        for index in noteCardGroup.indices {
+            let view = noteCardGroup[index]
             let card = game.cards[index]
-            if card.isFaceUp {
-                button.setTitle(note(for: card), for: UIControl.State.normal)
-                button.backgroundColor = #colorLiteral(red: 1, green: 0.8, blue: 0, alpha: 1)
-            } else {
-                button.setTitle("", for: UIControl.State.normal)
-                button.backgroundColor = (game.cards[index].isMatched ? #colorLiteral(red: 1, green: 0.8, blue: 0, alpha: 0) :  #colorLiteral(red: 0.3529411765, green: 0.7843137255, blue: 0.9803921569, alpha: 1))
-            }
+            view.isHidden = card.isMatched
+            view.isPreviouslySeen = card.isPreviouslySeen
+            view.isFaceUp = card.isFaceUp
         }
         flipCountLabel.text = "Flips: \(game.flipCount)"
         scoreLabel.text = "Score: \(game.gameScore)"
@@ -72,13 +77,43 @@ class ViewController: UIViewController {
     private var note = [Card:String]()
     
     
-    private func note(for card: Card) -> String {
-        if note[card] == nil, noteChoices.count > 0 {
-            note[card] = noteChoices.remove(at: noteChoices.count.arc4random)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        var cards = [Card]()
+        
+        for index in 0..<noteCardGroup.count {
+            let card = game.cards[index]
+            if note[card] == nil, noteChoices.count > 0 {
+                note[card] = noteChoices.remove(at: noteChoices.count.arc4random)
+            }
+            cards += [card]
         }
-        return note[card] ?? "?"
+        for cardView in noteCardGroup {
+            cardView.isFaceUp = false
+            let card = cards.removeFirst()
+            if let note = note[card] {
+                cardView.note = note
+            }
+            cardView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(flipCard(_:))))
+        }
     }
     
+    @objc func flipCard(_ recognizer: UITapGestureRecognizer) {
+        switch recognizer.state {
+        case .ended:
+            if let chosenCardView = recognizer.view as? NoteCardView {
+                print(chosenCardView.isFaceUp)
+                chosenCardView.isFaceUp = !chosenCardView.isFaceUp
+                print(chosenCardView.isFaceUp)
+                if let cardNumber = noteCardGroup.firstIndex(of: chosenCardView) {
+                    game.chooseCard(at: cardNumber)
+                    updateCardViewsAfterTap()
+                }
+            }
+        default:
+            break
+        }
+    }
 
 }
 
