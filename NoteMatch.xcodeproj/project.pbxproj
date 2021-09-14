@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		377FF1C726EEDD1000FB4555 /* NoteCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377FF1C626EEDD1000FB4555 /* NoteCardView.swift */; };
+		377FF1C926F15C8000FB4555 /* NoteMatchIntervalChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377FF1C826F15C8000FB4555 /* NoteMatchIntervalChooserViewController.swift */; };
 		378C05A126E2A143003B3BD8 /* NoteMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378C05A026E2A143003B3BD8 /* NoteMatch.swift */; };
 		378C05A326E2A1E3003B3BD8 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378C05A226E2A1E3003B3BD8 /* Card.swift */; };
 		379DEE9526E152330039CF8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DEE9426E152330039CF8E /* AppDelegate.swift */; };
 		379DEE9726E152330039CF8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DEE9626E152330039CF8E /* SceneDelegate.swift */; };
-		379DEE9926E152330039CF8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DEE9826E152330039CF8E /* ViewController.swift */; };
+		379DEE9926E152330039CF8E /* NoteMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DEE9826E152330039CF8E /* NoteMatchViewController.swift */; };
 		379DEE9C26E152330039CF8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379DEE9A26E152330039CF8E /* Main.storyboard */; };
 		379DEE9E26E152340039CF8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 379DEE9D26E152340039CF8E /* Assets.xcassets */; };
 		379DEEA126E152340039CF8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379DEE9F26E152340039CF8E /* LaunchScreen.storyboard */; };
@@ -20,12 +21,13 @@
 
 /* Begin PBXFileReference section */
 		377FF1C626EEDD1000FB4555 /* NoteCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCardView.swift; sourceTree = "<group>"; };
+		377FF1C826F15C8000FB4555 /* NoteMatchIntervalChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMatchIntervalChooserViewController.swift; sourceTree = "<group>"; };
 		378C05A026E2A143003B3BD8 /* NoteMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMatch.swift; sourceTree = "<group>"; };
 		378C05A226E2A1E3003B3BD8 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		379DEE9126E152330039CF8E /* NoteMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		379DEE9426E152330039CF8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		379DEE9626E152330039CF8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		379DEE9826E152330039CF8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		379DEE9826E152330039CF8E /* NoteMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMatchViewController.swift; sourceTree = "<group>"; };
 		379DEE9B26E152330039CF8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		379DEE9D26E152340039CF8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		379DEEA026E152340039CF8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,10 +66,11 @@
 			children = (
 				379DEE9426E152330039CF8E /* AppDelegate.swift */,
 				379DEE9626E152330039CF8E /* SceneDelegate.swift */,
-				379DEE9826E152330039CF8E /* ViewController.swift */,
+				379DEE9826E152330039CF8E /* NoteMatchViewController.swift */,
 				378C05A026E2A143003B3BD8 /* NoteMatch.swift */,
 				378C05A226E2A1E3003B3BD8 /* Card.swift */,
 				379DEE9A26E152330039CF8E /* Main.storyboard */,
+				377FF1C826F15C8000FB4555 /* NoteMatchIntervalChooserViewController.swift */,
 				379DEE9D26E152340039CF8E /* Assets.xcassets */,
 				379DEE9F26E152340039CF8E /* LaunchScreen.storyboard */,
 				379DEEA226E152340039CF8E /* Info.plist */,
@@ -147,7 +150,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				378C05A326E2A1E3003B3BD8 /* Card.swift in Sources */,
-				379DEE9926E152330039CF8E /* ViewController.swift in Sources */,
+				379DEE9926E152330039CF8E /* NoteMatchViewController.swift in Sources */,
+				377FF1C926F15C8000FB4555 /* NoteMatchIntervalChooserViewController.swift in Sources */,
 				378C05A126E2A143003B3BD8 /* NoteMatch.swift in Sources */,
 				379DEE9526E152330039CF8E /* AppDelegate.swift in Sources */,
 				377FF1C726EEDD1000FB4555 /* NoteCardView.swift in Sources */,

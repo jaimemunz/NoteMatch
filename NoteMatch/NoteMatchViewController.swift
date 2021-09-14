@@ -7,14 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class NoteMatchViewController: UIViewController {
 
-    private var noteThemes = [["F", "Dm", "C", "Fm", "G", "Em"], ["C", "Am", "G", "Em", "D", "Bm"], ["F♯m", "C♯m", "G♯m", "A", "E", "B"]]
     
-    private lazy var noteChoices = noteThemes[Int(arc4random_uniform(UInt32(noteThemes.count)))]
+    private lazy var noteChoices = ["F", "Dm", "C", "Fm", "G", "Em"]
     
     @IBAction private func newGame(_ sender: UIButton) {
-        noteChoices = noteThemes[Int(arc4random_uniform(UInt32(noteThemes.count)))]
+        noteChoices = interval!
         game = NoteMatch(numberOfMatchingPairs: (noteCardGroup.count + 1 ) / 2)
         var cards = [Card]()
         for index in 0..<noteCardGroup.count {
@@ -36,6 +35,14 @@ class ViewController: UIViewController {
     
     var numberOfMatchingPairs: Int {
         return (noteCardGroup.count + 1 ) / 2
+    }
+    
+    var interval: [String]? {
+        didSet {
+            noteChoices = interval ?? [String]()
+            note = [:]
+            updateCardViewsAfterTap()
+        }
     }
     
     @IBOutlet private weak var scoreLabel: UILabel!
@@ -62,16 +69,17 @@ class ViewController: UIViewController {
     
     
     private func updateCardViewsAfterTap() {
-        print(game.cards)
-        for index in noteCardGroup.indices {
-            let view = noteCardGroup[index]
-            let card = game.cards[index]
-            view.isHidden = card.isMatched
-            view.isPreviouslySeen = card.isPreviouslySeen
-            view.isFaceUp = card.isFaceUp
+        if noteCardGroup != nil {
+            for index in noteCardGroup.indices {
+                let view = noteCardGroup[index]
+                let card = game.cards[index]
+                view.isHidden = card.isMatched
+                view.isPreviouslySeen = card.isPreviouslySeen
+                view.isFaceUp = card.isFaceUp
+            }
+            flipCountLabel.text = "Flips: \(game.flipCount)"
+            scoreLabel.text = "Score: \(game.gameScore)"
         }
-        flipCountLabel.text = "Flips: \(game.flipCount)"
-        scoreLabel.text = "Score: \(game.gameScore)"
     }
     
     private var note = [Card:String]()
@@ -102,9 +110,7 @@ class ViewController: UIViewController {
         switch recognizer.state {
         case .ended:
             if let chosenCardView = recognizer.view as? NoteCardView {
-                print(chosenCardView.isFaceUp)
                 chosenCardView.isFaceUp = !chosenCardView.isFaceUp
-                print(chosenCardView.isFaceUp)
                 if let cardNumber = noteCardGroup.firstIndex(of: chosenCardView) {
                     game.chooseCard(at: cardNumber)
                     updateCardViewsAfterTap()
