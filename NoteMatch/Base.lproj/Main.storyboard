@@ -68,10 +68,135 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dHe-CQ-Dob">
-                                <rect key="frame" x="117" y="697" width="180" height="165"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5Vv-fO-g27">
+                                <rect key="frame" x="20" y="88" width="374" height="316"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lby-b5-FVC">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0Nd-dj-pN9">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6u-L5-HqE" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="87.5" height="100"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="87.5" id="AAf-Tq-RKe"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Inj-dx-feV" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
+                                                <rect key="frame" x="95.5" y="0.0" width="87.5" height="100"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="87.5" id="TaH-Ez-8zf"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABy-5o-5Dz" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
+                                                <rect key="frame" x="191" y="0.0" width="87.5" height="100"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="87.5" id="XqN-yI-1ZC"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AlC-1O-R8F" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
+                                                <rect key="frame" x="286.5" y="0.0" width="87.5" height="100"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="87.5" id="lcy-jP-uVF"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ABy-5o-5Dz" secondAttribute="trailing" constant="95.5" id="0B0-3f-pbE"/>
+                                            <constraint firstAttribute="trailing" secondItem="Inj-dx-feV" secondAttribute="trailing" constant="191" id="d7e-Wg-IR6"/>
+                                            <constraint firstAttribute="trailing" secondItem="AlC-1O-R8F" secondAttribute="trailing" id="dfB-4A-onZ"/>
+                                        </constraints>
+                                        <variation key="heightClass=compact" spacing="8"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="B0n-C5-n0i">
+                                        <rect key="frame" x="0.0" y="108" width="374" height="100"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w6j-yn-q1C" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="87.5" height="100"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ylm-T9-Uli" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
+                                                <rect key="frame" x="95.5" y="0.0" width="87.5" height="100"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kaJ-go-Enb" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
+                                                <rect key="frame" x="191" y="0.0" width="87.5" height="100"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0J0-Np-ZF4" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
+                                                <rect key="frame" x="286.5" y="0.0" width="87.5" height="100"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="w6j-yn-q1C" secondAttribute="trailing" constant="286.5" id="YqE-SJ-Azn"/>
+                                            <constraint firstAttribute="trailing" secondItem="kaJ-go-Enb" secondAttribute="trailing" constant="95.5" id="frV-Js-oy0"/>
+                                            <constraint firstAttribute="trailing" secondItem="0J0-Np-ZF4" secondAttribute="trailing" id="fwF-YK-8b9"/>
+                                            <constraint firstAttribute="trailing" secondItem="ylm-T9-Uli" secondAttribute="trailing" constant="191" id="rFt-uK-Hds"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RH5-1q-Vfk">
+                                        <rect key="frame" x="0.0" y="216" width="374" height="100"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nSe-ET-RGt" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="87.5" height="100"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fgy-8d-swv" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
+                                                <rect key="frame" x="95.5" y="0.0" width="87.5" height="100"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vY3-aF-kTR" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
+                                                <rect key="frame" x="191" y="0.0" width="87.5" height="100"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ieV-hw-21k" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
+                                                <rect key="frame" x="286.5" y="0.0" width="87.5" height="100"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Fgy-8d-swv" secondAttribute="trailing" constant="191" id="8JS-Di-tnd"/>
+                                            <constraint firstAttribute="trailing" secondItem="nSe-ET-RGt" secondAttribute="trailing" constant="286.5" id="BjG-Db-Ccs"/>
+                                            <constraint firstAttribute="trailing" secondItem="ieV-hw-21k" secondAttribute="trailing" id="iJd-fh-0P0"/>
+                                            <constraint firstAttribute="trailing" secondItem="vY3-aF-kTR" secondAttribute="trailing" constant="95.5" id="l4x-49-VYR"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="B0n-C5-n0i" secondAttribute="trailing" id="Q7n-HF-StC"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="RH5-1q-Vfk" secondAttribute="trailing" id="UQq-47-gai"/>
+                                    <constraint firstAttribute="trailing" secondItem="RH5-1q-Vfk" secondAttribute="trailing" id="aLB-k2-2jy"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Nd-dj-pN9" secondAttribute="trailing" id="lKE-3U-wbt"/>
+                                    <constraint firstAttribute="trailing" secondItem="B0n-C5-n0i" secondAttribute="trailing" id="z1F-VT-iCT"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="lKE-3U-wbt"/>
+                                        <exclude reference="z1F-VT-iCT"/>
+                                        <exclude reference="aLB-k2-2jy"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="lKE-3U-wbt"/>
+                                        <exclude reference="Q7n-HF-StC"/>
+                                        <include reference="z1F-VT-iCT"/>
+                                        <exclude reference="UQq-47-gai"/>
+                                        <include reference="aLB-k2-2jy"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dHe-CQ-Dob">
+                                <rect key="frame" x="117" y="672" width="180" height="190"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Lby-b5-FVC">
                                         <rect key="frame" x="0.0" y="0.0" width="180" height="58"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                         <state key="normal" title="New Game">
@@ -81,113 +206,95 @@
                                             <action selector="newGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pv7-nK-q6j"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOS-ZG-Bdz">
-                                        <rect key="frame" x="23" y="66" width="134" height="45.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOS-ZG-Bdz">
+                                        <rect key="frame" x="23" y="66" width="134" height="58"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flips: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sV-Rb-ge8">
-                                        <rect key="frame" x="32" y="119.5" width="116.5" height="45.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flips: 0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sV-Rb-ge8">
+                                        <rect key="frame" x="32" y="132" width="116.5" height="58"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <variation key="heightClass=compact" spacing="22"/>
                             </stackView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q6u-L5-HqE" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
-                                <rect key="frame" x="20" y="242" width="80" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <gestureRecognizers/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ABy-5o-5Dz" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
-                                <rect key="frame" x="217" y="242" width="80" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AlC-1O-R8F" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
-                                <rect key="frame" x="314" y="242" width="80" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w6j-yn-q1C" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
-                                <rect key="frame" x="20" y="350" width="80" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <gestureRecognizers/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ylm-T9-Uli" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
-                                <rect key="frame" x="117" y="350" width="80" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kaJ-go-Enb" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
-                                <rect key="frame" x="217" y="350" width="80" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0J0-Np-ZF4" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
-                                <rect key="frame" x="314" y="350" width="80" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nSe-ET-RGt" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
-                                <rect key="frame" x="20" y="458" width="80" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <gestureRecognizers/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fgy-8d-swv" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
-                                <rect key="frame" x="117" y="458" width="80" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vY3-aF-kTR" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
-                                <rect key="frame" x="217" y="458" width="80" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ieV-hw-21k" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
-                                <rect key="frame" x="314" y="458" width="80" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Inj-dx-feV" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
-                                <rect key="frame" x="117" y="242" width="80" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray3Color"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="5Vv-fO-g27" secondAttribute="bottom" constant="492" id="2ri-4u-QAz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dHe-CQ-Dob" secondAttribute="bottom" id="3zq-qV-RUp"/>
+                            <constraint firstItem="dHe-CQ-Dob" firstAttribute="leading" secondItem="5Vv-fO-g27" secondAttribute="trailing" constant="32" id="9pu-Id-82G"/>
+                            <constraint firstItem="dHe-CQ-Dob" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="692" id="B9H-Ro-zlP"/>
+                            <constraint firstItem="dHe-CQ-Dob" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="20" id="KTi-gl-egW"/>
                             <constraint firstItem="dHe-CQ-Dob" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Rcd-UD-bqN"/>
+                            <constraint firstItem="dHe-CQ-Dob" firstAttribute="top" secondItem="5Vv-fO-g27" secondAttribute="top" id="Sgp-SJ-o0e"/>
+                            <constraint firstItem="dHe-CQ-Dob" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5Vv-fO-g27" secondAttribute="bottom" constant="268" id="W4f-Oe-KtH"/>
+                            <constraint firstItem="dHe-CQ-Dob" firstAttribute="centerY" secondItem="5Vv-fO-g27" secondAttribute="centerY" id="Woy-wd-FJ9"/>
+                            <constraint firstItem="5Vv-fO-g27" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="bCg-mq-fHS"/>
+                            <constraint firstItem="5Vv-fO-g27" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hcz-4d-GXF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5Vv-fO-g27" secondAttribute="bottom" constant="33" id="hqg-lp-dgP"/>
+                            <constraint firstItem="5Vv-fO-g27" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="r41-HQ-SXE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Vv-fO-g27" secondAttribute="trailing" constant="20" id="r8R-5I-Sth"/>
+                            <constraint firstItem="5Vv-fO-g27" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xuN-6E-P14"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="hqg-lp-dgP"/>
+                                <exclude reference="bCg-mq-fHS"/>
+                                <exclude reference="xuN-6E-P14"/>
+                                <exclude reference="9pu-Id-82G"/>
+                                <exclude reference="B9H-Ro-zlP"/>
+                                <exclude reference="KTi-gl-egW"/>
+                                <exclude reference="Sgp-SJ-o0e"/>
+                                <exclude reference="Woy-wd-FJ9"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="3zq-qV-RUp"/>
+                                <include reference="hqg-lp-dgP"/>
+                                <exclude reference="r8R-5I-Sth"/>
+                                <exclude reference="2ri-4u-QAz"/>
+                                <include reference="bCg-mq-fHS"/>
+                                <exclude reference="hcz-4d-GXF"/>
+                                <exclude reference="r41-HQ-SXE"/>
+                                <include reference="xuN-6E-P14"/>
+                                <include reference="9pu-Id-82G"/>
+                                <include reference="B9H-Ro-zlP"/>
+                                <include reference="KTi-gl-egW"/>
+                                <exclude reference="Rcd-UD-bqN"/>
+                                <include reference="Sgp-SJ-o0e"/>
+                                <exclude reference="W4f-Oe-KtH"/>
+                                <include reference="Woy-wd-FJ9"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="yQW-ob-QTd"/>
                     <connections>
                         <outlet property="flipCountLabel" destination="2sV-Rb-ge8" id="zC1-Zc-Zol"/>
                         <outlet property="scoreLabel" destination="oOS-ZG-Bdz" id="tMF-UI-Nvr"/>
-                        <outletCollection property="noteCardGroup" destination="nSe-ET-RGt" collectionClass="NSMutableArray" id="4Dj-cn-bhf"/>
-                        <outletCollection property="noteCardGroup" destination="Fgy-8d-swv" collectionClass="NSMutableArray" id="4hb-oi-dFb"/>
-                        <outletCollection property="noteCardGroup" destination="vY3-aF-kTR" collectionClass="NSMutableArray" id="pxi-Bl-bpg"/>
-                        <outletCollection property="noteCardGroup" destination="ieV-hw-21k" collectionClass="NSMutableArray" id="vb3-ox-djF"/>
-                        <outletCollection property="noteCardGroup" destination="w6j-yn-q1C" collectionClass="NSMutableArray" id="rNk-nb-h2Y"/>
-                        <outletCollection property="noteCardGroup" destination="ylm-T9-Uli" collectionClass="NSMutableArray" id="IdJ-Ex-qa5"/>
-                        <outletCollection property="noteCardGroup" destination="kaJ-go-Enb" collectionClass="NSMutableArray" id="lQ9-aw-DVp"/>
-                        <outletCollection property="noteCardGroup" destination="0J0-Np-ZF4" collectionClass="NSMutableArray" id="ouO-DH-hxN"/>
+                        <outletCollection property="noteCardGroup" destination="ABy-5o-5Dz" collectionClass="NSMutableArray" id="GGx-Gy-mSx"/>
                         <outletCollection property="noteCardGroup" destination="Q6u-L5-HqE" collectionClass="NSMutableArray" id="8Jd-z2-Bdw"/>
                         <outletCollection property="noteCardGroup" destination="Inj-dx-feV" collectionClass="NSMutableArray" id="8W5-BF-zVI"/>
-                        <outletCollection property="noteCardGroup" destination="ABy-5o-5Dz" collectionClass="NSMutableArray" id="GGx-Gy-mSx"/>
                         <outletCollection property="noteCardGroup" destination="AlC-1O-R8F" collectionClass="NSMutableArray" id="8cz-FE-PYe"/>
+                        <outletCollection property="noteCardGroup" destination="kaJ-go-Enb" collectionClass="NSMutableArray" id="lQ9-aw-DVp"/>
+                        <outletCollection property="noteCardGroup" destination="0J0-Np-ZF4" collectionClass="NSMutableArray" id="ouO-DH-hxN"/>
+                        <outletCollection property="noteCardGroup" destination="ylm-T9-Uli" collectionClass="NSMutableArray" id="IdJ-Ex-qa5"/>
+                        <outletCollection property="noteCardGroup" destination="w6j-yn-q1C" collectionClass="NSMutableArray" id="rNk-nb-h2Y"/>
+                        <outletCollection property="noteCardGroup" destination="ieV-hw-21k" collectionClass="NSMutableArray" id="vb3-ox-djF"/>
+                        <outletCollection property="noteCardGroup" destination="Fgy-8d-swv" collectionClass="NSMutableArray" id="4hb-oi-dFb"/>
+                        <outletCollection property="noteCardGroup" destination="vY3-aF-kTR" collectionClass="NSMutableArray" id="pxi-Bl-bpg"/>
+                        <outletCollection property="noteCardGroup" destination="nSe-ET-RGt" collectionClass="NSMutableArray" id="4Dj-cn-bhf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="dfP-Zt-mVF"/>
             </objects>
-            <point key="canvasLocation" x="673.91304347826087" y="116.51785714285714"/>
+            <point key="canvasLocation" x="672.32142857142856" y="115.94202898550725"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Osa-A5-Ja7">

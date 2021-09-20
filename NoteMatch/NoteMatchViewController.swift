@@ -133,19 +133,11 @@ class NoteMatchViewController: UIViewController {
                 UIView.transition(with: chosenCardView, duration: 0.6, options: [.transitionFlipFromLeft], animations: {
                     chosenCardView.isFaceUp = !chosenCardView.isFaceUp
                 }, completion: { position in
-                    
-                    /*
-                    if self.faceUpCards.count == 2 && self.faceUpCards[0].note == self.faceUpCards[1].note {
-                        self.faceUpCards.forEach { cardView in
-                            UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.7, delay: 0.0, options: [], animations: {
-                                cardView.transform = CGAffineTransform.identity.scaledBy(x: 3.0, y: 3.0)
-                            })
-                        }
-                    }
-                    */
                     if let cardNumber = self.noteCardGroup.firstIndex(of: chosenCardView) {
                         self.game.chooseCard(at: cardNumber)
-                        self.updateCardViewsAfterTap()
+                        if chosenCardView.isFaceUp {
+                            self.updateCardViewsAfterTap()
+                        }
                     }
                 })
             }
