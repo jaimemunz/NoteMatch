@@ -73,9 +73,24 @@ class NoteMatchViewController: UIViewController {
             for index in noteCardGroup.indices {
                 let view = noteCardGroup[index]
                 let card = game.cards[index]
-                view.isHidden = card.isMatched
-                view.isPreviouslySeen = card.isPreviouslySeen
-                view.isFaceUp = card.isFaceUp
+                if card.isMatched && !view.isHidden {
+                    UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.7, delay: 0.0, options: [], animations: {
+                        view.transform = CGAffineTransform.identity.scaledBy(x: 3.0, y: 3.0)
+                    },
+                    completion: { position in
+                        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.75, delay: 0.0, options: [], animations: {
+                            view.transform = CGAffineTransform.identity.scaledBy(x: 0.1, y: 0.1)
+                            view.alpha = 0
+                        }, completion: { position in
+                            view.isHidden = card.isMatched
+                        })
+                    })
+                }
+                if view.isFaceUp != card.isFaceUp {
+                    UIView.transition(with: view, duration: 0.6, options: [.transitionFlipFromLeft], animations: {
+                        view.isFaceUp = card.isFaceUp
+                    })
+                }
             }
             flipCountLabel.text = "Flips: \(game.flipCount)"
             scoreLabel.text = "Score: \(game.gameScore)"
@@ -84,6 +99,11 @@ class NoteMatchViewController: UIViewController {
     
     private var note = [Card:String]()
     
+    private var faceUpCards: [NoteCardView] {
+        return noteCardGroup.filter {
+            $0.isFaceUp
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,17 +130,29 @@ class NoteMatchViewController: UIViewController {
         switch recognizer.state {
         case .ended:
             if let chosenCardView = recognizer.view as? NoteCardView {
-                chosenCardView.isFaceUp = !chosenCardView.isFaceUp
-                if let cardNumber = noteCardGroup.firstIndex(of: chosenCardView) {
-                    game.chooseCard(at: cardNumber)
-                    updateCardViewsAfterTap()
-                }
+                UIView.transition(with: chosenCardView, duration: 0.6, options: [.transitionFlipFromLeft], animations: {
+                    chosenCardView.isFaceUp = !chosenCardView.isFaceUp
+                }, completion: { position in
+                    
+                    /*
+                    if self.faceUpCards.count == 2 && self.faceUpCards[0].note == self.faceUpCards[1].note {
+                        self.faceUpCards.forEach { cardView in
+                            UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.7, delay: 0.0, options: [], animations: {
+                                cardView.transform = CGAffineTransform.identity.scaledBy(x: 3.0, y: 3.0)
+                            })
+                        }
+                    }
+                    */
+                    if let cardNumber = self.noteCardGroup.firstIndex(of: chosenCardView) {
+                        self.game.chooseCard(at: cardNumber)
+                        self.updateCardViewsAfterTap()
+                    }
+                })
             }
         default:
             break
         }
     }
-
 }
 
 

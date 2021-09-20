@@ -17,17 +17,6 @@ class NoteMatch {
                 return cards[$0].isFaceUp
             }
             return arrayOfFaceUpCardsIndices.oneAndOnly
-//            var foundIndex: Int?
-//            for index in cards.indices {
-//                if cards[index].isFaceUp {
-//                    if foundIndex == nil {
-//                        foundIndex = index
-//                    } else {
-//                        foundIndex = nil
-//                    }
-//                }
-//            }
-//            return foundIndex
         }
         set {
             for index in cards.indices {
