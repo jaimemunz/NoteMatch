@@ -12,7 +12,7 @@ class NoteCardView: UIView {
     var note: String = "A" { didSet { setNeedsDisplay(); setNeedsLayout() } }
     var isFaceUp: Bool = false { didSet { setNeedsDisplay(); setNeedsLayout() } }
     var isMatched = false { didSet { setNeedsDisplay(); setNeedsLayout() } }
-    //var isPreviouslySeen = false { didSet { setNeedsDisplay(); setNeedsLayout() } }
+    var isSoundCard = true { didSet { setNeedsDisplay(); setNeedsLayout() } }
     
     private func centeredAttributedFont(_ string: String, fontSize: CGFloat) -> NSAttributedString {
         print(string)
@@ -24,7 +24,7 @@ class NoteCardView: UIView {
     }
     
     private var noteString: NSAttributedString {
-        return centeredAttributedFont(note, fontSize: 16.0)
+        return centeredAttributedFont(isSoundCard ? "🔊" : note, fontSize: 16.0)
     }
     
     private func createNoteLabel() -> UILabel {

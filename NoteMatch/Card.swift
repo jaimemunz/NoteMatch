@@ -21,6 +21,7 @@ struct Card: Hashable {
     var isFaceUp = false
     var isMatched = false
     var isPreviouslySeen = false
+    var isSoundCard = false
     
     private static var uniqueIdentifier = 0
     

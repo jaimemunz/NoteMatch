@@ -107,8 +107,13 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="ABy-5o-5Dz" secondAttribute="trailing" constant="95.5" id="0B0-3f-pbE"/>
+                                            <constraint firstItem="AlC-1O-R8F" firstAttribute="leading" secondItem="0Nd-dj-pN9" secondAttribute="leading" constant="286.5" id="FjC-10-rnz"/>
+                                            <constraint firstItem="ABy-5o-5Dz" firstAttribute="leading" secondItem="0Nd-dj-pN9" secondAttribute="leading" constant="191" id="Geg-8n-gOo"/>
+                                            <constraint firstItem="Inj-dx-feV" firstAttribute="leading" secondItem="0Nd-dj-pN9" secondAttribute="leading" constant="95.5" id="W01-Sg-m99"/>
+                                            <constraint firstAttribute="trailing" secondItem="Q6u-L5-HqE" secondAttribute="trailing" constant="286.5" id="bXE-K4-lcg"/>
                                             <constraint firstAttribute="trailing" secondItem="Inj-dx-feV" secondAttribute="trailing" constant="191" id="d7e-Wg-IR6"/>
                                             <constraint firstAttribute="trailing" secondItem="AlC-1O-R8F" secondAttribute="trailing" id="dfB-4A-onZ"/>
+                                            <constraint firstItem="Q6u-L5-HqE" firstAttribute="leading" secondItem="0Nd-dj-pN9" secondAttribute="leading" id="jfM-d3-HZA"/>
                                         </constraints>
                                         <variation key="heightClass=compact" spacing="8"/>
                                     </stackView>
@@ -119,24 +124,40 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="87.5" height="100"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="87.5" id="10e-Ub-1pa"/>
+                                                </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ylm-T9-Uli" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
                                                 <rect key="frame" x="95.5" y="0.0" width="87.5" height="100"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="87.5" id="jPh-01-UAu"/>
+                                                </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kaJ-go-Enb" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
                                                 <rect key="frame" x="191" y="0.0" width="87.5" height="100"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="87.5" id="MN1-Sl-8Vq"/>
+                                                </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0J0-Np-ZF4" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
                                                 <rect key="frame" x="286.5" y="0.0" width="87.5" height="100"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="87.5" id="0th-9e-fMb"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="0J0-Np-ZF4" firstAttribute="leading" secondItem="B0n-C5-n0i" secondAttribute="leading" constant="286.5" id="5mp-VP-ivb"/>
+                                            <constraint firstItem="ylm-T9-Uli" firstAttribute="leading" secondItem="B0n-C5-n0i" secondAttribute="leading" constant="95.5" id="CWa-4A-Mmd"/>
                                             <constraint firstAttribute="trailing" secondItem="w6j-yn-q1C" secondAttribute="trailing" constant="286.5" id="YqE-SJ-Azn"/>
                                             <constraint firstAttribute="trailing" secondItem="kaJ-go-Enb" secondAttribute="trailing" constant="95.5" id="frV-Js-oy0"/>
                                             <constraint firstAttribute="trailing" secondItem="0J0-Np-ZF4" secondAttribute="trailing" id="fwF-YK-8b9"/>
+                                            <constraint firstItem="w6j-yn-q1C" firstAttribute="leading" secondItem="B0n-C5-n0i" secondAttribute="leading" id="ghk-5n-mMb"/>
+                                            <constraint firstItem="kaJ-go-Enb" firstAttribute="leading" secondItem="B0n-C5-n0i" secondAttribute="leading" constant="191" id="rAy-LH-hd6"/>
                                             <constraint firstAttribute="trailing" secondItem="ylm-T9-Uli" secondAttribute="trailing" constant="191" id="rFt-uK-Hds"/>
                                         </constraints>
                                     </stackView>
@@ -147,31 +168,46 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="87.5" height="100"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="87.5" id="cRk-Yy-f50"/>
+                                                </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fgy-8d-swv" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
                                                 <rect key="frame" x="95.5" y="0.0" width="87.5" height="100"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="87.5" id="yKi-Q5-hSC"/>
+                                                </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vY3-aF-kTR" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
                                                 <rect key="frame" x="191" y="0.0" width="87.5" height="100"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="87.5" id="wzD-2G-kTi"/>
+                                                </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ieV-hw-21k" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
                                                 <rect key="frame" x="286.5" y="0.0" width="87.5" height="100"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="87.5" id="3bx-d2-dkw"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Fgy-8d-swv" secondAttribute="trailing" constant="191" id="8JS-Di-tnd"/>
                                             <constraint firstAttribute="trailing" secondItem="nSe-ET-RGt" secondAttribute="trailing" constant="286.5" id="BjG-Db-Ccs"/>
+                                            <constraint firstItem="Fgy-8d-swv" firstAttribute="leading" secondItem="RH5-1q-Vfk" secondAttribute="leading" constant="95.5" id="QgS-Oq-tUa"/>
+                                            <constraint firstItem="ieV-hw-21k" firstAttribute="leading" secondItem="RH5-1q-Vfk" secondAttribute="leading" constant="286.5" id="dVJ-aN-swC"/>
                                             <constraint firstAttribute="trailing" secondItem="ieV-hw-21k" secondAttribute="trailing" id="iJd-fh-0P0"/>
                                             <constraint firstAttribute="trailing" secondItem="vY3-aF-kTR" secondAttribute="trailing" constant="95.5" id="l4x-49-VYR"/>
+                                            <constraint firstItem="nSe-ET-RGt" firstAttribute="leading" secondItem="RH5-1q-Vfk" secondAttribute="leading" id="pap-UH-tXj"/>
+                                            <constraint firstItem="vY3-aF-kTR" firstAttribute="leading" secondItem="RH5-1q-Vfk" secondAttribute="leading" constant="191" id="tVo-Rd-lPq"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="B0n-C5-n0i" secondAttribute="trailing" id="Q7n-HF-StC"/>
-                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="RH5-1q-Vfk" secondAttribute="trailing" id="UQq-47-gai"/>
                                     <constraint firstAttribute="trailing" secondItem="RH5-1q-Vfk" secondAttribute="trailing" id="aLB-k2-2jy"/>
                                     <constraint firstAttribute="trailing" secondItem="0Nd-dj-pN9" secondAttribute="trailing" id="lKE-3U-wbt"/>
                                     <constraint firstAttribute="trailing" secondItem="B0n-C5-n0i" secondAttribute="trailing" id="z1F-VT-iCT"/>
@@ -188,7 +224,6 @@
                                         <include reference="lKE-3U-wbt"/>
                                         <exclude reference="Q7n-HF-StC"/>
                                         <include reference="z1F-VT-iCT"/>
-                                        <exclude reference="UQq-47-gai"/>
                                         <include reference="aLB-k2-2jy"/>
                                     </mask>
                                 </variation>

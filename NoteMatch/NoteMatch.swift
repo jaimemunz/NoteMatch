@@ -60,7 +60,9 @@ class NoteMatch {
 
         for _ in 1...numberOfMatchingPairs {
             let card = Card()
-            cards += [card, card]
+            var soundCard = card
+            soundCard.isSoundCard = true
+            cards += [card, soundCard]
         }
         
         cards.shuffle()

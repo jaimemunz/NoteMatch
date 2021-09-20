@@ -6,13 +6,19 @@
 //
 
 import UIKit
+import AVFoundation
 
 class NoteMatchViewController: UIViewController {
 
+    var player:AVPlayer?
+    var playerItem:AVPlayerItem?
+
+    var notePlayer: NotePlayer = NotePlayer()
     
     private lazy var noteChoices = ["F", "Dm", "C", "Fm", "G", "Em"]
-    
+
     @IBAction private func newGame(_ sender: UIButton) {
+        
         noteChoices = interval!
         game = NoteMatch(numberOfMatchingPairs: (noteCardGroup.count + 1 ) / 2)
         var cards = [Card]()
@@ -25,14 +31,17 @@ class NoteMatchViewController: UIViewController {
         }
         for cardView in noteCardGroup {
             cardView.isFaceUp = false
+            //cardView.isHidden = false
             let card = cards.removeFirst()
             if let note = note[card] {
                 cardView.note = note
             }
         }
         updateCardViewsAfterTap()
+ 
     }
     
+
     var numberOfMatchingPairs: Int {
         return (noteCardGroup.count + 1 ) / 2
     }
@@ -108,7 +117,7 @@ class NoteMatchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         var cards = [Card]()
-        
+        print(note)
         for index in 0..<noteCardGroup.count {
             let card = game.cards[index]
             if note[card] == nil, noteChoices.count > 0 {
@@ -116,12 +125,16 @@ class NoteMatchViewController: UIViewController {
             }
             cards += [card]
         }
+        print(note)
+        print(cards)
+        
         for cardView in noteCardGroup {
             cardView.isFaceUp = false
             let card = cards.removeFirst()
             if let note = note[card] {
                 cardView.note = note
             }
+            cardView.isSoundCard = card.isSoundCard
             cardView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(flipCard(_:))))
         }
     }
@@ -133,6 +146,9 @@ class NoteMatchViewController: UIViewController {
                 UIView.transition(with: chosenCardView, duration: 0.6, options: [.transitionFlipFromLeft], animations: {
                     chosenCardView.isFaceUp = !chosenCardView.isFaceUp
                 }, completion: { position in
+                    if chosenCardView.isSoundCard {
+                        self.notePlayer.playNotes(forChord: chosenCardView.note)
+                    }
                     if let cardNumber = self.noteCardGroup.firstIndex(of: chosenCardView) {
                         self.game.chooseCard(at: cardNumber)
                         if chosenCardView.isFaceUp {
