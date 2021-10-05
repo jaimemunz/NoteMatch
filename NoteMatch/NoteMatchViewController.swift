@@ -25,7 +25,7 @@ class NoteMatchViewController: UIViewController {
         didSet {
             noteChoices = interval ?? [String]()
             note = [:]
-            updateCardViewsAfterTap()
+            updateCardViews()
         }
     }
     
@@ -50,8 +50,31 @@ class NoteMatchViewController: UIViewController {
 
     @IBOutlet var noteCardGroup: [NoteCardView]!
     
-    private func updateCardViewsAfterTap() {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        var cards = [Card]()
+        for index in 0..<noteCardGroup.count {
+            let card = game.cards[index]
+            if note[card] == nil, noteChoices.count > 0 {
+                note[card] = noteChoices.remove(at: noteChoices.count.arc4random)
+            }
+            cards += [card]
+        }
+        
+        for cardView in noteCardGroup {
+            cardView.isFaceUp = false
+            let card = cards.removeFirst()
+            if let note = note[card] {
+                cardView.note = note
+            }
+            cardView.isSoundCard = card.isSoundCard
+            cardView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(flipCard(_:))))
+        }
+    }
+    
+    private func updateCardViews() {
         if noteCardGroup != nil {
+            print(game.cards)
             for index in noteCardGroup.indices {
                 let view = noteCardGroup[index]
                 let card = game.cards[index]
@@ -78,6 +101,7 @@ class NoteMatchViewController: UIViewController {
             scoreLabel.text = "Score: \(game.gameScore)"
         }
     }
+     
     
     private var note = [Card:String]()
     
@@ -87,55 +111,89 @@ class NoteMatchViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        var cards = [Card]()
-        print(note)
-        for index in 0..<noteCardGroup.count {
-            let card = game.cards[index]
-            if note[card] == nil, noteChoices.count > 0 {
-                note[card] = noteChoices.remove(at: noteChoices.count.arc4random)
-            }
-            cards += [card]
-        }
-        print(note)
-        print(cards)
-        
-        for cardView in noteCardGroup {
-            cardView.isFaceUp = false
-            let card = cards.removeFirst()
-            if let note = note[card] {
-                cardView.note = note
-            }
-            cardView.isSoundCard = card.isSoundCard
-            cardView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(flipCard(_:))))
-        }
+    private var faceUpCardViewsMatch: Bool {
+        return faceUpCards.count == 2 &&
+            faceUpCards[0].note == faceUpCards[1].note
     }
+    
+    var lastChosenCardView: NoteCardView?
     
     @objc func flipCard(_ recognizer: UITapGestureRecognizer) {
         switch recognizer.state {
         case .ended:
-            if let chosenCardView = recognizer.view as? NoteCardView {
-                UIView.transition(with: chosenCardView, duration: 0.6, options: [.transitionFlipFromLeft], animations: {
-                    chosenCardView.isFaceUp = !chosenCardView.isFaceUp
-                }, completion: { position in
-                    if chosenCardView.isSoundCard {
-                        self.notePlayer.playNotes(forChord: chosenCardView.note)
-                    }
-                    if let cardNumber = self.noteCardGroup.firstIndex(of: chosenCardView) {
-                        self.game.chooseCard(at: cardNumber)
-                        if chosenCardView.isFaceUp {
-                            self.updateCardViewsAfterTap()
+            if let chosenCardView = recognizer.view as? NoteCardView, faceUpCards.count < 2 {
+                lastChosenCardView = chosenCardView
+                UIView.transition(
+                    with: chosenCardView,
+                    duration: 0.5,
+                    options: [.transitionFlipFromLeft],
+                    animations: {
+                        chosenCardView.isFaceUp = !chosenCardView.isFaceUp
+                },
+                    completion: { finished in
+                        let cardsToAnimate = self.faceUpCards
+                        if chosenCardView.isSoundCard {
+                            self.notePlayer.playNotes(forChord: chosenCardView.note)
                         }
-                    }
-                })
+                        if let cardNumber = self.noteCardGroup.firstIndex(of: chosenCardView) {
+                            self.game.chooseCard(at: cardNumber)
+                        }
+                        if self.faceUpCardViewsMatch {
+                            UIViewPropertyAnimator.runningPropertyAnimator(
+                                withDuration: 0.6,
+                                delay: 0,
+                                options: [],
+                                animations: {
+                                    cardsToAnimate.forEach {
+                                        $0.transform = CGAffineTransform.identity.scaledBy(x: 3.0, y: 3.0)
+                                    }
+                            },
+                                completion: { position in
+                                    UIViewPropertyAnimator.runningPropertyAnimator(
+                                        withDuration: 0.75,
+                                        delay: 0,
+                                        options: [],
+                                        animations: {
+                                            cardsToAnimate.forEach {
+                                                $0.transform = CGAffineTransform.identity.scaledBy(x: 0.1, y: 0.1)
+                                                $0.alpha = 0
+                                            }
+                                    },
+                                        completion: { position in
+                                            cardsToAnimate.forEach {
+                                                $0.isFaceUp = false
+                                                $0.isHidden = true
+                                                $0.alpha = 1
+                                                $0.transform = .identity
+                                            }
+                                    }
+                                    )
+                            }
+                            )
+                        } else if cardsToAnimate.count == 2 {
+                            if chosenCardView == self.lastChosenCardView {
+                                cardsToAnimate.forEach { cardView in
+                                    UIView.transition(
+                                        with: cardView,
+                                        duration: 0.5,
+                                        options: [.transitionFlipFromLeft],
+                                        animations: {
+                                            cardView.isFaceUp = false
+                                    }
+                                    )
+                                }
+                            }
+                        }
+                        self.flipCountLabel.text = "Flips: \(self.game.flipCount)"
+                        self.scoreLabel.text = "Score: \(self.game.gameScore)"
+                }
+                )
             }
         default:
             break
         }
     }
 }
-
 
 extension Int {
     var arc4random : Int {

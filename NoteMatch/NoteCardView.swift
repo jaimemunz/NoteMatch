@@ -15,7 +15,6 @@ class NoteCardView: UIView {
     var isSoundCard = true { didSet { setNeedsDisplay(); setNeedsLayout() } }
     
     private func centeredAttributedFont(_ string: String, fontSize: CGFloat) -> NSAttributedString {
-        print(string)
         var font = UIFont.preferredFont(forTextStyle: .body).withSize(fontSize)
         font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
         let paragraphStyle = NSMutableParagraphStyle()

@@ -70,37 +70,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="Inj-dx-feV" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
-                                <rect key="frame" x="226" y="324" width="71" height="140"/>
+                                <rect key="frame" x="220" y="324" width="81" height="118"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" horizontalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ABy-5o-5Dz" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ABy-5o-5Dz" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
                                 <rect key="frame" x="20" y="206" width="99" height="110"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" horizontalHuggingPriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="w6j-yn-q1C" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="800" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w6j-yn-q1C" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
                                 <rect key="frame" x="20" y="88" width="99" height="110"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                             </view>
-                            <view contentMode="scaleToFill" horizontalHuggingPriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="0J0-Np-ZF4" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
-                                <rect key="frame" x="131" y="206" width="85" height="110"/>
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="800" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0J0-Np-ZF4" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
+                                <rect key="frame" x="127" y="206" width="85" height="110"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" horizontalHuggingPriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="nSe-ET-RGt" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
-                                <rect key="frame" x="131" y="88" width="85" height="110"/>
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="800" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nSe-ET-RGt" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
+                                <rect key="frame" x="127" y="88" width="85" height="110"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                             </view>
-                            <view contentMode="scaleToFill" horizontalHuggingPriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="Fgy-8d-swv" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
-                                <rect key="frame" x="20" y="324" width="99" height="140"/>
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="800" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fgy-8d-swv" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
+                                <rect key="frame" x="20" y="324" width="99" height="118"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="vY3-aF-kTR" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
-                                <rect key="frame" x="225" y="206" width="71" height="110"/>
+                                <rect key="frame" x="220" y="206" width="81" height="110"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" horizontalHuggingPriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="ylm-T9-Uli" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
-                                <rect key="frame" x="131" y="324" width="85" height="140"/>
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="800" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ylm-T9-Uli" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
+                                <rect key="frame" x="127" y="324" width="85" height="118"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="Q6u-L5-HqE" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
@@ -110,7 +110,7 @@
                                 <gestureRecognizers/>
                             </view>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="AlC-1O-R8F" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
-                                <rect key="frame" x="226" y="88" width="71" height="110"/>
+                                <rect key="frame" x="220" y="88" width="81" height="110"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="kaJ-go-Enb" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
@@ -118,7 +118,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="ieV-hw-21k" customClass="NoteCardView" customModule="NoteMatch" customModuleProvider="target">
-                                <rect key="frame" x="309" y="324" width="99" height="140"/>
+                                <rect key="frame" x="309" y="324" width="99" height="118"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="dHe-CQ-Dob">
@@ -148,7 +148,6 @@
                             </constraint>
                             <constraint firstItem="ABy-5o-5Dz" firstAttribute="top" secondItem="w6j-yn-q1C" secondAttribute="bottom" constant="8" symbolic="YES" id="1af-Rj-dgT"/>
                             <constraint firstItem="AlC-1O-R8F" firstAttribute="top" secondItem="w6j-yn-q1C" secondAttribute="top" id="2DD-7C-ras"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ieV-hw-21k" secondAttribute="bottom" constant="428" id="2gD-be-Xec"/>
                             <constraint firstItem="nSe-ET-RGt" firstAttribute="trailing" secondItem="0J0-Np-ZF4" secondAttribute="trailing" id="36u-at-0dE"/>
                             <constraint firstItem="Inj-dx-feV" firstAttribute="trailing" secondItem="AlC-1O-R8F" secondAttribute="trailing" id="3SP-r4-H4T"/>
                             <constraint firstItem="AlC-1O-R8F" firstAttribute="bottom" secondItem="nSe-ET-RGt" secondAttribute="bottom" id="3T4-gi-wSy"/>
@@ -168,13 +167,13 @@
                             <constraint firstItem="dHe-CQ-Dob" firstAttribute="centerY" secondItem="vY3-aF-kTR" secondAttribute="centerY" id="8wQ-hI-ag0">
                                 <variation key="heightClass=compact" constant="-11.5"/>
                             </constraint>
-                            <constraint firstAttribute="trailing" secondItem="ABy-5o-5Dz" secondAttribute="trailing" constant="309" id="9N7-gs-trS"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ABy-5o-5Dz" secondAttribute="trailing" constant="100" id="9N7-gs-trS"/>
                             <constraint firstItem="AlC-1O-R8F" firstAttribute="top" secondItem="kaJ-go-Enb" secondAttribute="top" id="9vM-it-5BY"/>
                             <constraint firstItem="ABy-5o-5Dz" firstAttribute="top" secondItem="Q6u-L5-HqE" secondAttribute="top" id="A9V-lC-fUl"/>
                             <constraint firstItem="vY3-aF-kTR" firstAttribute="leading" secondItem="0J0-Np-ZF4" secondAttribute="trailing" constant="8" id="Az2-oy-hqD"/>
                             <constraint firstItem="ABy-5o-5Dz" firstAttribute="bottom" secondItem="vY3-aF-kTR" secondAttribute="bottom" id="BUd-9v-DDf"/>
                             <constraint firstAttribute="trailing" secondItem="vY3-aF-kTR" secondAttribute="trailing" constant="370" id="ByF-df-eAd"/>
-                            <constraint firstItem="ieV-hw-21k" firstAttribute="leading" secondItem="Inj-dx-feV" secondAttribute="trailing" constant="12" id="C1H-wv-XUj"/>
+                            <constraint firstItem="ieV-hw-21k" firstAttribute="leading" secondItem="Inj-dx-feV" secondAttribute="trailing" constant="8" id="C1H-wv-XUj"/>
                             <constraint firstItem="ieV-hw-21k" firstAttribute="bottom" secondItem="nSe-ET-RGt" secondAttribute="bottom" id="Cbz-2q-bqL"/>
                             <constraint firstItem="Fgy-8d-swv" firstAttribute="trailing" secondItem="ABy-5o-5Dz" secondAttribute="trailing" id="CfS-x6-4Yd"/>
                             <constraint firstItem="AlC-1O-R8F" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="D6n-2A-ciG"/>
@@ -182,6 +181,7 @@
                             <constraint firstItem="ieV-hw-21k" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="324" id="EGL-bI-dwD"/>
                             <constraint firstItem="ieV-hw-21k" firstAttribute="top" secondItem="nSe-ET-RGt" secondAttribute="top" id="F9K-XV-Waf"/>
                             <constraint firstItem="Inj-dx-feV" firstAttribute="leading" secondItem="ylm-T9-Uli" secondAttribute="trailing" constant="9" id="FkG-pV-VEg"/>
+                            <constraint firstItem="nSe-ET-RGt" firstAttribute="leading" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="127" id="GeI-R9-wzS"/>
                             <constraint firstItem="vY3-aF-kTR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="376" id="GqJ-Za-XUC"/>
                             <constraint firstItem="ABy-5o-5Dz" firstAttribute="top" secondItem="w6j-yn-q1C" secondAttribute="bottom" constant="8" id="I4C-rq-SBU"/>
                             <constraint firstItem="ABy-5o-5Dz" firstAttribute="top" secondItem="0J0-Np-ZF4" secondAttribute="top" id="JUh-Ee-EZC"/>
@@ -208,6 +208,7 @@
                             <constraint firstItem="dHe-CQ-Dob" firstAttribute="centerY" secondItem="ABy-5o-5Dz" secondAttribute="centerY" id="Pty-6V-tnI">
                                 <variation key="heightClass=compact" constant="-11.5"/>
                             </constraint>
+                            <constraint firstItem="kaJ-go-Enb" firstAttribute="height" secondItem="Q6u-L5-HqE" secondAttribute="height" id="Pvm-tq-3BM"/>
                             <constraint firstItem="Inj-dx-feV" firstAttribute="bottom" secondItem="Fgy-8d-swv" secondAttribute="bottom" id="Pyg-kG-kWy"/>
                             <constraint firstItem="Fgy-8d-swv" firstAttribute="leading" secondItem="ABy-5o-5Dz" secondAttribute="leading" id="QFF-aq-sNT"/>
                             <constraint firstItem="nSe-ET-RGt" firstAttribute="leading" secondItem="ylm-T9-Uli" secondAttribute="leading" id="RKc-Mb-rF8"/>
@@ -233,7 +234,8 @@
                             <constraint firstItem="ylm-T9-Uli" firstAttribute="trailing" secondItem="0J0-Np-ZF4" secondAttribute="trailing" id="bHg-t7-l3o"/>
                             <constraint firstItem="ieV-hw-21k" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="309" id="bda-1G-UFU"/>
                             <constraint firstItem="ieV-hw-21k" firstAttribute="bottom" secondItem="w6j-yn-q1C" secondAttribute="bottom" id="c26-eg-fWr"/>
-                            <constraint firstItem="Q6u-L5-HqE" firstAttribute="leading" secondItem="vY3-aF-kTR" secondAttribute="trailing" constant="13" id="cx6-HS-nag"/>
+                            <constraint firstItem="vY3-aF-kTR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="220" id="c64-zA-fPA"/>
+                            <constraint firstItem="Q6u-L5-HqE" firstAttribute="leading" secondItem="vY3-aF-kTR" secondAttribute="trailing" constant="8" id="cx6-HS-nag"/>
                             <constraint firstItem="ieV-hw-21k" firstAttribute="bottom" secondItem="Fgy-8d-swv" secondAttribute="bottom" id="eQK-dt-cSP"/>
                             <constraint firstItem="ieV-hw-21k" firstAttribute="leading" secondItem="kaJ-go-Enb" secondAttribute="leading" id="eQV-n2-p57"/>
                             <constraint firstItem="ieV-hw-21k" firstAttribute="bottom" secondItem="ylm-T9-Uli" secondAttribute="bottom" id="elW-NJ-Orp"/>
@@ -251,11 +253,10 @@
                             <constraint firstItem="vY3-aF-kTR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="162" id="naN-Jp-w1a">
                                 <variation key="heightClass=compact" constant="164"/>
                             </constraint>
-                            <constraint firstItem="Inj-dx-feV" firstAttribute="leading" secondItem="ylm-T9-Uli" secondAttribute="trailing" constant="10" id="nef-Cw-3i6"/>
-                            <constraint firstAttribute="trailing" secondItem="ylm-T9-Uli" secondAttribute="trailing" constant="212" id="oET-bx-PpQ"/>
+                            <constraint firstItem="Inj-dx-feV" firstAttribute="leading" secondItem="ylm-T9-Uli" secondAttribute="trailing" constant="8" id="nef-Cw-3i6"/>
                             <constraint firstItem="ABy-5o-5Dz" firstAttribute="trailing" secondItem="w6j-yn-q1C" secondAttribute="trailing" id="oF7-Ze-RcJ"/>
                             <constraint firstItem="ieV-hw-21k" firstAttribute="top" secondItem="w6j-yn-q1C" secondAttribute="top" id="phg-NR-K1q"/>
-                            <constraint firstItem="0J0-Np-ZF4" firstAttribute="leading" secondItem="ABy-5o-5Dz" secondAttribute="trailing" constant="12" id="prw-Ey-eTE"/>
+                            <constraint firstItem="0J0-Np-ZF4" firstAttribute="leading" secondItem="ABy-5o-5Dz" secondAttribute="trailing" constant="8" id="prw-Ey-eTE"/>
                             <constraint firstItem="dHe-CQ-Dob" firstAttribute="leading" secondItem="kaJ-go-Enb" secondAttribute="trailing" constant="8" symbolic="YES" id="qFh-78-tbE">
                                 <variation key="heightClass=compact" constant="31"/>
                             </constraint>
@@ -264,7 +265,7 @@
                             <constraint firstItem="ieV-hw-21k" firstAttribute="top" secondItem="ylm-T9-Uli" secondAttribute="top" id="rbE-OD-aeg"/>
                             <constraint firstItem="Inj-dx-feV" firstAttribute="top" secondItem="Fgy-8d-swv" secondAttribute="top" id="rtp-9Q-rKX"/>
                             <constraint firstItem="ieV-hw-21k" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="s0o-Qz-Rj8"/>
-                            <constraint firstItem="vY3-aF-kTR" firstAttribute="leading" secondItem="0J0-Np-ZF4" secondAttribute="trailing" constant="9" id="scd-AM-Kvd"/>
+                            <constraint firstItem="vY3-aF-kTR" firstAttribute="leading" secondItem="0J0-Np-ZF4" secondAttribute="trailing" constant="8" id="scd-AM-Kvd"/>
                             <constraint firstItem="ieV-hw-21k" firstAttribute="top" secondItem="Inj-dx-feV" secondAttribute="top" id="u03-no-RLO"/>
                             <constraint firstItem="ieV-hw-21k" firstAttribute="top" secondItem="AlC-1O-R8F" secondAttribute="top" id="uhm-qj-Vtw"/>
                             <constraint firstItem="AlC-1O-R8F" firstAttribute="bottom" secondItem="kaJ-go-Enb" secondAttribute="bottom" id="wRF-iB-jDD"/>
@@ -275,13 +276,13 @@
                             <constraint firstItem="ylm-T9-Uli" firstAttribute="leading" secondItem="nSe-ET-RGt" secondAttribute="leading" id="xaP-11-gZg"/>
                             <constraint firstItem="vY3-aF-kTR" firstAttribute="top" secondItem="AlC-1O-R8F" secondAttribute="bottom" constant="8" symbolic="YES" id="xmO-LT-ZXx"/>
                             <constraint firstItem="Fgy-8d-swv" firstAttribute="top" secondItem="ABy-5o-5Dz" secondAttribute="bottom" constant="8" symbolic="YES" id="y7y-Cd-YuK"/>
+                            <constraint firstItem="kaJ-go-Enb" firstAttribute="height" secondItem="ieV-hw-21k" secondAttribute="height" multiplier="0.932203" id="yLp-Hw-EZV"/>
                             <constraint firstItem="ylm-T9-Uli" firstAttribute="trailing" secondItem="nSe-ET-RGt" secondAttribute="trailing" id="ybp-HX-g7Q"/>
                             <constraint firstItem="nSe-ET-RGt" firstAttribute="leading" secondItem="0J0-Np-ZF4" secondAttribute="leading" id="zjz-Jh-To7"/>
                             <constraint firstItem="Inj-dx-feV" firstAttribute="leading" secondItem="AlC-1O-R8F" secondAttribute="leading" id="zlO-yO-4L7"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="2gD-be-Xec"/>
                                 <exclude reference="5lI-Uf-NDM"/>
                                 <exclude reference="36u-at-0dE"/>
                                 <exclude reference="RKc-Mb-rF8"/>
@@ -333,7 +334,6 @@
                                 <exclude reference="3VB-yJ-6xZ"/>
                                 <exclude reference="bHg-t7-l3o"/>
                                 <exclude reference="iiS-9X-eyy"/>
-                                <exclude reference="oET-bx-PpQ"/>
                                 <exclude reference="xaP-11-gZg"/>
                                 <exclude reference="ybp-HX-g7Q"/>
                                 <exclude reference="O2D-R7-ClC"/>
@@ -447,7 +447,6 @@
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="constraints">
-                                <include reference="2gD-be-Xec"/>
                                 <include reference="1af-Rj-dgT"/>
                                 <include reference="7Kr-kk-dAz"/>
                                 <include reference="9N7-gs-trS"/>
@@ -476,7 +475,6 @@
                                 <include reference="y7y-Cd-YuK"/>
                                 <include reference="bHg-t7-l3o"/>
                                 <include reference="iiS-9X-eyy"/>
-                                <include reference="oET-bx-PpQ"/>
                                 <include reference="xaP-11-gZg"/>
                                 <include reference="ybp-HX-g7Q"/>
                                 <include reference="cx6-HS-nag"/>
@@ -521,7 +519,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="dfP-Zt-mVF"/>
             </objects>
-            <point key="canvasLocation" x="671.01449275362324" y="115.84821428571428"/>
+            <point key="canvasLocation" x="667.28971962616822" y="114.68682505399569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Osa-A5-Ja7">
