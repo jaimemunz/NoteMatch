@@ -37,7 +37,7 @@ class NoteMatch {
                 if cards[matchIndex] == cards[index] {
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
-                    gameScore += 2
+                    gameScore += 10
                 }
                 if !cards[index].isMatched {
                     if cards[index].isPreviouslySeen {

@@ -17,31 +17,6 @@ class NoteMatchViewController: UIViewController {
     
     private lazy var noteChoices = ["F", "Dm", "C", "Fm", "G", "Em"]
 
-    @IBAction private func newGame(_ sender: UIButton) {
-        
-        noteChoices = interval!
-        game = NoteMatch(numberOfMatchingPairs: (noteCardGroup.count + 1 ) / 2)
-        var cards = [Card]()
-        for index in 0..<noteCardGroup.count {
-            let card = game.cards[index]
-            if note[card] == nil, noteChoices.count > 0 {
-                note[card] = noteChoices.remove(at: noteChoices.count.arc4random)
-            }
-            cards += [card]
-        }
-        for cardView in noteCardGroup {
-            cardView.isFaceUp = false
-            //cardView.isHidden = false
-            let card = cards.removeFirst()
-            if let note = note[card] {
-                cardView.note = note
-            }
-        }
-        updateCardViewsAfterTap()
- 
-    }
-    
-
     var numberOfMatchingPairs: Int {
         return (noteCardGroup.count + 1 ) / 2
     }
@@ -74,8 +49,6 @@ class NoteMatchViewController: UIViewController {
     }
 
     @IBOutlet var noteCardGroup: [NoteCardView]!
-    
-    
     
     private func updateCardViewsAfterTap() {
         if noteCardGroup != nil {
